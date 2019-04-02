@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltrasonicSensorDemo", "UltrasonicSensorDemo\UltrasonicSensorDemo.csproj", "{B6331FA7-52C8-416A-82D7-F5DA023C8293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorDemoGui", "SensorDemoGui\SensorDemoGui.csproj", "{12FAA829-95BE-411D-B574-4BFA8A59112A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6331FA7-52C8-416A-82D7-F5DA023C8293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6331FA7-52C8-416A-82D7-F5DA023C8293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6331FA7-52C8-416A-82D7-F5DA023C8293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6331FA7-52C8-416A-82D7-F5DA023C8293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FAA829-95BE-411D-B574-4BFA8A59112A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FAA829-95BE-411D-B574-4BFA8A59112A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FAA829-95BE-411D-B574-4BFA8A59112A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FAA829-95BE-411D-B574-4BFA8A59112A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E38D209E-C3BB-4601-9EC0-FFC512A0E47A}
+	EndGlobalSection
+EndGlobal
