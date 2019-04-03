@@ -1,6 +1,6 @@
 ﻿namespace SensorDemo
 {
-    partial class Form1
+    partial class SensorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,6 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.editConfButton = new System.Windows.Forms.Button();
-            this.modeBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.editFiltersButton = new System.Windows.Forms.Button();
@@ -60,14 +59,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.getValueButton = new System.Windows.Forms.Button();
-            this.getValueTextBox = new System.Windows.Forms.TextBox();
             this.sensorDataListView = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.getValueButton = new System.Windows.Forms.Button();
+            this.getValueTextBox = new System.Windows.Forms.TextBox();
+            this.modeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -129,7 +129,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 16);
+            this.label1.Location = new System.Drawing.Point(7, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 0;
@@ -195,33 +195,25 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.modeComboBox);
             this.groupBox3.Controls.Add(this.editConfButton);
-            this.groupBox3.Controls.Add(this.modeBox);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(301, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(121, 86);
+            this.groupBox3.Size = new System.Drawing.Size(172, 86);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Configuration";
             // 
             // editConfButton
             // 
-            this.editConfButton.Location = new System.Drawing.Point(20, 55);
+            this.editConfButton.Location = new System.Drawing.Point(51, 55);
             this.editConfButton.Name = "editConfButton";
             this.editConfButton.Size = new System.Drawing.Size(75, 23);
             this.editConfButton.TabIndex = 2;
             this.editConfButton.Text = "Edit";
             this.editConfButton.UseVisualStyleBackColor = true;
             this.editConfButton.Click += new System.EventHandler(this.EditConfButton_Click);
-            // 
-            // modeBox
-            // 
-            this.modeBox.Enabled = false;
-            this.modeBox.Location = new System.Drawing.Point(40, 16);
-            this.modeBox.Name = "modeBox";
-            this.modeBox.Size = new System.Drawing.Size(31, 20);
-            this.modeBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -237,16 +229,16 @@
             this.groupBox4.Controls.Add(this.editFiltersButton);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(301, 111);
+            this.groupBox4.Location = new System.Drawing.Point(301, 92);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(121, 279);
+            this.groupBox4.Size = new System.Drawing.Size(172, 196);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
             // editFiltersButton
             // 
-            this.editFiltersButton.Location = new System.Drawing.Point(20, 244);
+            this.editFiltersButton.Location = new System.Drawing.Point(51, 164);
             this.editFiltersButton.Name = "editFiltersButton";
             this.editFiltersButton.Size = new System.Drawing.Size(75, 23);
             this.editFiltersButton.TabIndex = 2;
@@ -261,31 +253,31 @@
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.timeCheckBox);
-            this.groupBox6.Location = new System.Drawing.Point(9, 131);
+            this.groupBox6.Location = new System.Drawing.Point(9, 86);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(95, 107);
+            this.groupBox6.Size = new System.Drawing.Size(157, 72);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Time";
             // 
             // timeHiTextBox
             // 
-            this.timeHiTextBox.Location = new System.Drawing.Point(31, 65);
+            this.timeHiTextBox.Location = new System.Drawing.Point(108, 39);
             this.timeHiTextBox.Name = "timeHiTextBox";
-            this.timeHiTextBox.Size = new System.Drawing.Size(55, 20);
+            this.timeHiTextBox.Size = new System.Drawing.Size(43, 20);
             this.timeHiTextBox.TabIndex = 4;
             // 
             // timeLoTextBox
             // 
             this.timeLoTextBox.Location = new System.Drawing.Point(31, 39);
             this.timeLoTextBox.Name = "timeLoTextBox";
-            this.timeLoTextBox.Size = new System.Drawing.Size(55, 20);
+            this.timeLoTextBox.Size = new System.Drawing.Size(43, 20);
             this.timeLoTextBox.TabIndex = 3;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 69);
+            this.label7.Location = new System.Drawing.Point(80, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 13);
             this.label7.TabIndex = 2;
@@ -317,18 +309,18 @@
             this.groupBox5.Controls.Add(this.rangeLoTextBox);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Location = new System.Drawing.Point(9, 19);
+            this.groupBox5.Location = new System.Drawing.Point(9, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(95, 106);
+            this.groupBox5.Size = new System.Drawing.Size(157, 68);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Range";
             // 
             // rangeHiTextBox
             // 
-            this.rangeHiTextBox.Location = new System.Drawing.Point(31, 71);
+            this.rangeHiTextBox.Location = new System.Drawing.Point(108, 39);
             this.rangeHiTextBox.Name = "rangeHiTextBox";
-            this.rangeHiTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rangeHiTextBox.Size = new System.Drawing.Size(43, 20);
             this.rangeHiTextBox.TabIndex = 4;
             // 
             // rangeCheckBox
@@ -345,13 +337,13 @@
             // 
             this.rangeLoTextBox.Location = new System.Drawing.Point(31, 39);
             this.rangeLoTextBox.Name = "rangeLoTextBox";
-            this.rangeLoTextBox.Size = new System.Drawing.Size(55, 20);
+            this.rangeLoTextBox.Size = new System.Drawing.Size(43, 20);
             this.rangeLoTextBox.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 74);
+            this.label5.Location = new System.Drawing.Point(80, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 13);
             this.label5.TabIndex = 1;
@@ -371,30 +363,12 @@
             this.groupBox7.Controls.Add(this.sensorDataListView);
             this.groupBox7.Controls.Add(this.getValueButton);
             this.groupBox7.Controls.Add(this.getValueTextBox);
-            this.groupBox7.Location = new System.Drawing.Point(10, 303);
+            this.groupBox7.Location = new System.Drawing.Point(10, 294);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(285, 165);
+            this.groupBox7.Size = new System.Drawing.Size(285, 168);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Sensor Values";
-            // 
-            // getValueButton
-            // 
-            this.getValueButton.Location = new System.Drawing.Point(13, 16);
-            this.getValueButton.Name = "getValueButton";
-            this.getValueButton.Size = new System.Drawing.Size(75, 23);
-            this.getValueButton.TabIndex = 2;
-            this.getValueButton.Text = "Get Value";
-            this.getValueButton.UseVisualStyleBackColor = true;
-            this.getValueButton.Click += new System.EventHandler(this.GetValueButton_Click);
-            // 
-            // getValueTextBox
-            // 
-            this.getValueTextBox.Location = new System.Drawing.Point(107, 16);
-            this.getValueTextBox.Name = "getValueTextBox";
-            this.getValueTextBox.ReadOnly = true;
-            this.getValueTextBox.Size = new System.Drawing.Size(60, 20);
-            this.getValueTextBox.TabIndex = 1;
             // 
             // sensorDataListView
             // 
@@ -436,18 +410,51 @@
             this.columnHeader9.Text = "Timestamp";
             this.columnHeader9.Width = 65;
             // 
-            // Form1
+            // getValueButton
+            // 
+            this.getValueButton.Location = new System.Drawing.Point(13, 16);
+            this.getValueButton.Name = "getValueButton";
+            this.getValueButton.Size = new System.Drawing.Size(75, 23);
+            this.getValueButton.TabIndex = 2;
+            this.getValueButton.Text = "Get Value";
+            this.getValueButton.UseVisualStyleBackColor = true;
+            this.getValueButton.Click += new System.EventHandler(this.GetValueButton_Click);
+            // 
+            // getValueTextBox
+            // 
+            this.getValueTextBox.Location = new System.Drawing.Point(107, 16);
+            this.getValueTextBox.Name = "getValueTextBox";
+            this.getValueTextBox.ReadOnly = true;
+            this.getValueTextBox.Size = new System.Drawing.Size(60, 20);
+            this.getValueTextBox.TabIndex = 1;
+            // 
+            // modeComboBox
+            // 
+            this.modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.modeComboBox.Enabled = false;
+            this.modeComboBox.FormattingEnabled = true;
+            this.modeComboBox.Items.AddRange(new object[] {
+            "None",
+            "Gpio",
+            "Stream Value",
+            "Gpio + Stream Value"});
+            this.modeComboBox.Location = new System.Drawing.Point(40, 15);
+            this.modeComboBox.Name = "modeComboBox";
+            this.modeComboBox.Size = new System.Drawing.Size(126, 21);
+            this.modeComboBox.TabIndex = 3;
+            // 
+            // SensorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 474);
+            this.ClientSize = new System.Drawing.Size(487, 467);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SensorForm";
+            this.Text = "Sensors";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -480,7 +487,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox modeBox;
         private System.Windows.Forms.Button editConfButton;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -505,6 +511,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ComboBox modeComboBox;
     }
 }
 
