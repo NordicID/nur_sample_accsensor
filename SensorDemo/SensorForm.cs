@@ -43,10 +43,13 @@ namespace SensorDemo
         {
             foreach (ListViewItem item in sensorDataListView.Items)
             {
-                AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
-                if (cfg.source == source)
+                if (item != null)
                 {
-                    return item;
+                    AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
+                    if (cfg.source == source)
+                    {
+                        return item;
+                    }
                 }
             }
             return null;
@@ -56,10 +59,13 @@ namespace SensorDemo
         {
             foreach (ListViewItem item in sensorListView.Items)
             {
-                AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
-                if (cfg.source == source)
+                if (item != null)
                 {
-                    return item;
+                    AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
+                    if (cfg.source == source)
+                    {
+                        return item;
+                    }
                 }
             }
             return null;
@@ -203,11 +209,13 @@ namespace SensorDemo
 
         private AccessorySensorConfig? GetSelectedConfig()
         {
-            ListView.SelectedListViewItemCollection items = sensorListView.SelectedItems;
-            foreach (ListViewItem item in items)
+            foreach (ListViewItem item in sensorListView.SelectedItems)
             {
-                AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
-                return cfg;
+                if (item != null)
+                {
+                    AccessorySensorConfig cfg = (AccessorySensorConfig)item.Tag;
+                    return cfg;
+                }
             }
             return null;
         }
@@ -301,11 +309,14 @@ namespace SensorDemo
                 }
                 foreach (ListViewItem item in sensorListView.Items)
                 {
-                    AccessorySensorConfig listCfg = (AccessorySensorConfig)item.Tag;
-                    if (listCfg.source == c.source)
+                    if (item != null)
                     {
-                        item.Tag = c;
-                        item.SubItems[3].Text = c.mode.ToString();
+                        AccessorySensorConfig listCfg = (AccessorySensorConfig)item.Tag;
+                        if (listCfg.source == c.source)
+                        {
+                            item.Tag = c;
+                            item.SubItems[3].Text = c.mode.ToString();
+                        }
                     }
                 }
             }
