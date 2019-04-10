@@ -42,6 +42,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.refreshButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.modeComboBox = new System.Windows.Forms.ComboBox();
             this.editConfButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -67,7 +68,6 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.getValueButton = new System.Windows.Forms.Button();
             this.getValueTextBox = new System.Windows.Forms.TextBox();
-            this.modeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -141,7 +141,7 @@
             this.groupBox2.Controls.Add(this.refreshButton);
             this.groupBox2.Location = new System.Drawing.Point(10, 92);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(285, 196);
+            this.groupBox2.Size = new System.Drawing.Size(285, 223);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sensors";
@@ -157,7 +157,7 @@
             this.sensorListView.Location = new System.Drawing.Point(10, 19);
             this.sensorListView.MultiSelect = false;
             this.sensorListView.Name = "sensorListView";
-            this.sensorListView.Size = new System.Drawing.Size(265, 139);
+            this.sensorListView.Size = new System.Drawing.Size(265, 169);
             this.sensorListView.TabIndex = 2;
             this.sensorListView.UseCompatibleStateImageBehavior = false;
             this.sensorListView.View = System.Windows.Forms.View.Details;
@@ -185,7 +185,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(92, 164);
+            this.refreshButton.Location = new System.Drawing.Point(92, 194);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(75, 23);
             this.refreshButton.TabIndex = 1;
@@ -198,12 +198,27 @@
             this.groupBox3.Controls.Add(this.modeComboBox);
             this.groupBox3.Controls.Add(this.editConfButton);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(301, 0);
+            this.groupBox3.Location = new System.Drawing.Point(12, 331);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(172, 86);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Configuration";
+            // 
+            // modeComboBox
+            // 
+            this.modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.modeComboBox.Enabled = false;
+            this.modeComboBox.FormattingEnabled = true;
+            this.modeComboBox.Items.AddRange(new object[] {
+            "None",
+            "Gpio",
+            "Stream Value",
+            "Gpio + Stream Value"});
+            this.modeComboBox.Location = new System.Drawing.Point(40, 15);
+            this.modeComboBox.Name = "modeComboBox";
+            this.modeComboBox.Size = new System.Drawing.Size(126, 21);
+            this.modeComboBox.TabIndex = 3;
             // 
             // editConfButton
             // 
@@ -229,16 +244,16 @@
             this.groupBox4.Controls.Add(this.editFiltersButton);
             this.groupBox4.Controls.Add(this.groupBox6);
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(301, 92);
+            this.groupBox4.Location = new System.Drawing.Point(200, 331);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(172, 196);
+            this.groupBox4.Size = new System.Drawing.Size(339, 116);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
             // editFiltersButton
             // 
-            this.editFiltersButton.Location = new System.Drawing.Point(51, 164);
+            this.editFiltersButton.Location = new System.Drawing.Point(136, 86);
             this.editFiltersButton.Name = "editFiltersButton";
             this.editFiltersButton.Size = new System.Drawing.Size(75, 23);
             this.editFiltersButton.TabIndex = 2;
@@ -253,9 +268,9 @@
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.timeCheckBox);
-            this.groupBox6.Location = new System.Drawing.Point(9, 86);
+            this.groupBox6.Location = new System.Drawing.Point(172, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(157, 72);
+            this.groupBox6.Size = new System.Drawing.Size(157, 68);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Time";
@@ -304,8 +319,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.rangeHiTextBox);
             this.groupBox5.Controls.Add(this.rangeCheckBox);
+            this.groupBox5.Controls.Add(this.rangeHiTextBox);
             this.groupBox5.Controls.Add(this.rangeLoTextBox);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label4);
@@ -321,15 +336,15 @@
             this.rangeHiTextBox.Location = new System.Drawing.Point(108, 39);
             this.rangeHiTextBox.Name = "rangeHiTextBox";
             this.rangeHiTextBox.Size = new System.Drawing.Size(43, 20);
-            this.rangeHiTextBox.TabIndex = 4;
+            this.rangeHiTextBox.TabIndex = 2;
             // 
             // rangeCheckBox
             // 
             this.rangeCheckBox.AutoSize = true;
-            this.rangeCheckBox.Location = new System.Drawing.Point(9, 19);
+            this.rangeCheckBox.Location = new System.Drawing.Point(6, 18);
             this.rangeCheckBox.Name = "rangeCheckBox";
             this.rangeCheckBox.Size = new System.Drawing.Size(65, 17);
-            this.rangeCheckBox.TabIndex = 3;
+            this.rangeCheckBox.TabIndex = 0;
             this.rangeCheckBox.Text = "Enabled";
             this.rangeCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -338,7 +353,7 @@
             this.rangeLoTextBox.Location = new System.Drawing.Point(31, 39);
             this.rangeLoTextBox.Name = "rangeLoTextBox";
             this.rangeLoTextBox.Size = new System.Drawing.Size(43, 20);
-            this.rangeLoTextBox.TabIndex = 2;
+            this.rangeLoTextBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -363,9 +378,9 @@
             this.groupBox7.Controls.Add(this.sensorDataListView);
             this.groupBox7.Controls.Add(this.getValueButton);
             this.groupBox7.Controls.Add(this.getValueTextBox);
-            this.groupBox7.Location = new System.Drawing.Point(10, 294);
+            this.groupBox7.Location = new System.Drawing.Point(301, 92);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(285, 168);
+            this.groupBox7.Size = new System.Drawing.Size(285, 223);
             this.groupBox7.TabIndex = 4;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Sensor Values";
@@ -378,9 +393,9 @@
             this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9});
-            this.sensorDataListView.Location = new System.Drawing.Point(13, 45);
+            this.sensorDataListView.Location = new System.Drawing.Point(13, 19);
             this.sensorDataListView.Name = "sensorDataListView";
-            this.sensorDataListView.Size = new System.Drawing.Size(262, 108);
+            this.sensorDataListView.Size = new System.Drawing.Size(262, 169);
             this.sensorDataListView.TabIndex = 3;
             this.sensorDataListView.UseCompatibleStateImageBehavior = false;
             this.sensorDataListView.View = System.Windows.Forms.View.Details;
@@ -412,7 +427,7 @@
             // 
             // getValueButton
             // 
-            this.getValueButton.Location = new System.Drawing.Point(13, 16);
+            this.getValueButton.Location = new System.Drawing.Point(13, 194);
             this.getValueButton.Name = "getValueButton";
             this.getValueButton.Size = new System.Drawing.Size(75, 23);
             this.getValueButton.TabIndex = 2;
@@ -422,32 +437,17 @@
             // 
             // getValueTextBox
             // 
-            this.getValueTextBox.Location = new System.Drawing.Point(107, 16);
+            this.getValueTextBox.Location = new System.Drawing.Point(94, 196);
             this.getValueTextBox.Name = "getValueTextBox";
             this.getValueTextBox.ReadOnly = true;
             this.getValueTextBox.Size = new System.Drawing.Size(60, 20);
             this.getValueTextBox.TabIndex = 1;
             // 
-            // modeComboBox
-            // 
-            this.modeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.modeComboBox.Enabled = false;
-            this.modeComboBox.FormattingEnabled = true;
-            this.modeComboBox.Items.AddRange(new object[] {
-            "None",
-            "Gpio",
-            "Stream Value",
-            "Gpio + Stream Value"});
-            this.modeComboBox.Location = new System.Drawing.Point(40, 15);
-            this.modeComboBox.Name = "modeComboBox";
-            this.modeComboBox.Size = new System.Drawing.Size(126, 21);
-            this.modeComboBox.TabIndex = 3;
-            // 
             // SensorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 467);
+            this.ClientSize = new System.Drawing.Size(596, 452);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
