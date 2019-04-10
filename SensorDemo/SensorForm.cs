@@ -12,7 +12,7 @@ namespace SensorDemo
 
         public SensorForm()
         {
-            nur = new NurApi();
+            nur = new NurApi(this);
             InitializeComponent();
             Application.ApplicationExit += Application_ApplicationExit;
             try
