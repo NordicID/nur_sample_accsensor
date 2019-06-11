@@ -54,8 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.timeCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.rangeHiTextBox = new System.Windows.Forms.TextBox();
             this.rangeCheckBox = new System.Windows.Forms.CheckBox();
+            this.rangeHiTextBox = new System.Windows.Forms.TextBox();
             this.rangeLoTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.getValueButton = new System.Windows.Forms.Button();
             this.getValueTextBox = new System.Windows.Forms.TextBox();
+            this.buttonLog = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonLog);
             this.groupBox1.Controls.Add(this.statusLabel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.connectButton);
@@ -331,13 +333,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Range";
             // 
-            // rangeHiTextBox
-            // 
-            this.rangeHiTextBox.Location = new System.Drawing.Point(108, 39);
-            this.rangeHiTextBox.Name = "rangeHiTextBox";
-            this.rangeHiTextBox.Size = new System.Drawing.Size(43, 20);
-            this.rangeHiTextBox.TabIndex = 2;
-            // 
             // rangeCheckBox
             // 
             this.rangeCheckBox.AutoSize = true;
@@ -347,6 +342,13 @@
             this.rangeCheckBox.TabIndex = 0;
             this.rangeCheckBox.Text = "Enabled";
             this.rangeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // rangeHiTextBox
+            // 
+            this.rangeHiTextBox.Location = new System.Drawing.Point(108, 39);
+            this.rangeHiTextBox.Name = "rangeHiTextBox";
+            this.rangeHiTextBox.Size = new System.Drawing.Size(43, 20);
+            this.rangeHiTextBox.TabIndex = 2;
             // 
             // rangeLoTextBox
             // 
@@ -443,11 +445,21 @@
             this.getValueTextBox.Size = new System.Drawing.Size(60, 20);
             this.getValueTextBox.TabIndex = 1;
             // 
+            // buttonLog
+            // 
+            this.buttonLog.Location = new System.Drawing.Point(198, 55);
+            this.buttonLog.Name = "buttonLog";
+            this.buttonLog.Size = new System.Drawing.Size(75, 23);
+            this.buttonLog.TabIndex = 5;
+            this.buttonLog.Text = "Log";
+            this.buttonLog.UseVisualStyleBackColor = true;
+            this.buttonLog.Click += new System.EventHandler(this.buttonLog_Click);
+            // 
             // SensorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 452);
+            this.ClientSize = new System.Drawing.Size(1087, 452);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -455,6 +467,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SensorForm";
             this.Text = "Sensors";
+            this.Load += new System.EventHandler(this.SensorForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -512,6 +525,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ComboBox modeComboBox;
+        private System.Windows.Forms.Button buttonLog;
     }
 }
 

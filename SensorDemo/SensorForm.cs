@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using NurApiDotNet;
 using static NurApiDotNet.NurApi;
+using NurApiDotNet.Forms;
 
 namespace SensorDemo
 {
     public partial class SensorForm : Form
     {
         private NurApi nur;
+        NurLogViewerForm logForm; //Log window
 
         public SensorForm()
         {
@@ -369,6 +371,21 @@ namespace SensorDemo
                     MessageBox.Show(ex.ToString(), "Error");
                 }
             }
+        }
+
+        private void SensorForm_Load(object sender, EventArgs e)
+        {
+            logForm = new NurLogViewerForm(nur);
+        }
+
+        private void buttonLog_Click(object sender, EventArgs e)
+        {
+            if (logForm.IsDisposed)
+            {
+                logForm = new NurLogViewerForm(nur);
+            }
+
+            logForm.Show();
         }
     }
 }
