@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using NurApiDotNet;
 using static NurApiDotNet.NurApi;
 using NurApiDotNet.Forms;
+using System.Threading;
 
 namespace SensorDemo
 {
@@ -147,6 +148,42 @@ namespace SensorDemo
         {
             statusLabel.Text = "Connected";
             EnumerateSensors();
+
+            // Hardware Settings => IO port => On
+            new Thread(() =>
+            {
+                // XXX: remember nur exception handling
+                GpioEntry[] cfgs = nur.GetGPIOConfig();
+                // leave first 4 (input) pins as is
+                for (int i = 4; i < 8; i++)
+                {
+                    cfgs[i].available = true;
+                    cfgs[i].enabled = true;
+                    cfgs[i].type = GPIO_TYPE_OUTPUT;
+                    cfgs[i].edge = GPIO_EDGE_RISING; // default state, alt. GPIO_EDGE_FALLING
+                    cfgs[i].action = GPIO_ACT_NONE;
+                }
+                nur.SetGPIOConfig(cfgs);
+
+                int j = 1;
+                bool goUp = true;
+                while (true)
+                {
+                    for (int k = 4; k < 8; k++)
+                    {
+                        nur.SetGPIOStatus(k, ((k+j) % 4) != 0);
+                    }
+                    if (goUp)
+                        j++;
+                    else
+                        j--;
+                    if (j == 4)
+                        goUp = false;
+                    else if (j == 1)
+                        goUp = true;
+                    Thread.Sleep(300);
+                }
+            }).Start();
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
